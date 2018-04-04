@@ -1582,33 +1582,33 @@
 					}).dataBind();
 
 					// test all filter conditions
-					ds.filter([{ fieldName: "ReleaseHour", expr: "22:30", cond: "at" }], true);
+					ds.filter([{ fieldName: "ReleaseHour", expr: "20:30", cond: "at" }], true);
 					fd = ds.filteredData();
 					ok(fd.length === 1, "Using 'at' condition expecting 1 records filtered result: " + fd.length);
 
-					ds.filter([{ fieldName: "ReleaseHour", expr: "22:30", cond: "notAt" }], true);
+					ds.filter([{ fieldName: "ReleaseHour", expr: "20:30", cond: "notAt" }], true);
 					fd = ds.filteredData();
 					ok(fd.length === 8, "Using 'notat' condition expecting 8 records filtered result: " + fd.length);
 
-					ds.filter([{ fieldName: "ReleaseHour", expr: "17:30", cond: "before" }], true);
+					ds.filter([{ fieldName: "ReleaseHour", expr: "15:30", cond: "before" }], true);
 					fd = ds.filteredData();
 					ok(fd.length === 1, "Using 'before' condition expecting 1 records filtered result: " + fd.length);
 
-					ds.filter([{ fieldName: "ReleaseHour", expr: "17:30", cond: "atBefore" }], true);
+					ds.filter([{ fieldName: "ReleaseHour", expr: "15:30", cond: "atBefore" }], true);
 					fd = ds.filteredData();
 					ok(fd.length === 5, "Using 'atBefore' condition expecting 5 records filtered result: " + fd.length);
 					
-					ds.filter([{ fieldName: "ReleaseHour", expr: "17:30", cond: "after" }], true);
+					ds.filter([{ fieldName: "ReleaseHour", expr: "15:30", cond: "after" }], true);
 					fd = ds.filteredData();
 					ok(fd.length === 4, "Using 'after' condition expecting 4 records filtered result: " + fd.length);
 
-					ds.filter([{ fieldName: "ReleaseHour", expr: "17:30", cond: "atAfter" }], true);
+					ds.filter([{ fieldName: "ReleaseHour", expr: "15:30", cond: "atAfter" }], true);
 					fd = ds.filteredData();
 					ok(fd.length === 8, "Using 'after' condition expecting 8 records filtered result: " + fd.length);
 
 					var errorCount = 0;
 					try {
-						ds.filter([{ fieldName: "ReleaseHour", expr: "17:30", cond: "notRealContition" }], true);
+						ds.filter([{ fieldName: "ReleaseHour", expr: "15:30", cond: "notRealContition" }], true);
 					} catch (e) {
 						errorCount++;
 					}
